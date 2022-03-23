@@ -3,7 +3,7 @@ package constants
 // common constants
 const (
 	ApplicationName            = "operation-quasar-go"
-	Apipath                    = "/api/v1/rebelAlliance"
+	Apipath                    = "/alliance"
 	KENOBI                     = "kenobi"
 	SKYWALKER                  = "skywalker"
 	SATO                       = "sato"

@@ -18,7 +18,7 @@ type MemCache struct {
 
 func init() {
 	fmt.Printf("[cache] - init")
-	cli := cache.New(5*time.Minute, 5*time.Minute)
+	cli := cache.New(10*time.Minute, 10*time.Minute)
 	DefaultMemCache = &MemCache{
 		cli: cli,
 	}
