@@ -9,6 +9,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/oskarincon/operation-quasar-go/constants"
 	"github.com/oskarincon/operation-quasar-go/handlers"
+	"github.com/oskarincon/operation-quasar-go/services"
 )
 
 var adapter *fiberadaptor.FiberLambda
@@ -19,6 +20,7 @@ func init() {
 	// Create Routes
 	handlers.SetupRoutes(router)
 	// Server Init
+	services.Init()
 	//handlers.Init(app)
 	adapter = fiberadaptor.New(app)
 }
