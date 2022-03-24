@@ -19,7 +19,7 @@ func init() {
 	// Create Routes
 	handlers.SetupRoutes(router)
 	// Server Init
-	//handlers.Init(app)
+	handlers.Init(app)
 	adapter = fiberadaptor.New(app)
 }
 
