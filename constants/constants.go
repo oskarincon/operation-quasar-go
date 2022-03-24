@@ -11,6 +11,7 @@ const (
 	DISTANCES_SATELLITES_ERROR = "no se tienen distancias para todos los satelites"
 	MESSAGE_ERROR              = "los mensajes deben venin informados"
 	DATA_NOT_FOUND_ERROR       = "no hay data suficiente para calcular datos"
+	SATELLITE_ERROR            = "el satelite a guardar debe ser kenobi, skywalker o sato"
 	KENOBIX                    = -500.0
 	KENOBIY                    = -200.0
 	SKYWALKERX                 = 100.0

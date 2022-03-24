@@ -3,51 +3,52 @@ package services
 import (
 	"errors"
 	"fmt"
-	"time"
+	"strings"
 
+	"github.com/ReneKroon/ttlcache/v2"
 	"github.com/oskarincon/operation-quasar-go/constants"
 	"github.com/oskarincon/operation-quasar-go/models"
-	"github.com/patrickmn/go-cache"
 )
 
-var Cache *cache.Cache
-
-func Init() {
-	fmt.Printf("[PostInfoSatellite] - INIT")
-	if Cache == nil {
-		Cache = cache.New(50*time.Minute, 50*time.Minute)
-	}
-}
+var cacheKenobi ttlcache.SimpleCache = ttlcache.NewCache()
+var cacheSkywalker ttlcache.SimpleCache = ttlcache.NewCache()
+var cacheSato ttlcache.SimpleCache = ttlcache.NewCache()
 
 func PostInfoSatellite(satelliteName string, data models.Satellite) (response models.Satellite, err error) {
-	data.Name = satelliteName
 	fmt.Printf("[PostInfoSatellite] - data: %#v\n", data)
-	SetCache(satelliteName, data)
+	switch strings.ToLower(satelliteName) {
+	case "kenobi":
+		data.Name = "kenobi"
+		cacheKenobi.Set("kenobi", data)
+	case "skywalker":
+		data.Name = "skywalker"
+		cacheSkywalker.Set("skywalker", data)
+	case "sato":
+		data.Name = "sato"
+		cacheSato.Set("sato", data)
+	default:
+		return response, errors.New(constants.SATELLITE_ERROR)
+	}
 	response = data
 	return response, err
 }
 
-func SetCache(key string, emp models.Satellite) bool {
-	Cache.Set(key, emp, cache.NoExpiration)
-	return true
-}
-
-func GetCache(key string) (models.Satellite, bool) {
+func GetCache(key string, cache ttlcache.SimpleCache) (models.Satellite, bool) {
 	var emp models.Satellite
-	var found bool
-	data, found := Cache.Get(key)
-	if found {
-		emp = data.(models.Satellite)
+	data, err := cache.Get(key)
+	if err != nil {
+		return emp, false
 	}
-	return emp, found
+	emp = data.(models.Satellite)
+	return emp, true
 }
 
 func GetInfoSatellite() (response models.Satellites, err error) {
-	dataKenobi, foundKenobi := GetCache("kenobi")
-	dataSkywalker, foundSkywalker := GetCache("skywalker")
-	dataSato, foundSato := GetCache("sato")
+	dataKenobi, foundKenobi := GetCache("kenobi", cacheKenobi)
 	fmt.Printf("[GetInfoSatellite] - dataKenobi: %#v\n", dataKenobi)
+	dataSkywalker, foundSkywalker := GetCache("skywalker", cacheSkywalker)
 	fmt.Printf("[GetInfoSatellite] - dataSkywalker: %#v\n", dataSkywalker)
+	dataSato, foundSato := GetCache("sato", cacheSato)
 	fmt.Printf("[GetInfoSatellite] - dataSato: %#v\n", dataSato)
 	if !foundKenobi || !foundSkywalker || !foundSato {
 		return response, errors.New(constants.DATA_NOT_FOUND_ERROR)
