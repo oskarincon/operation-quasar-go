@@ -7,7 +7,10 @@ Operación Fuego de Quasar
 
 ## Requirementos 🛠️ 
 **GO 1.7**
-**Docker** 
+
+**Docker**
+
+**Postman**
 
 ## Clonar Proyecto ⏬
 > $ git clone git@github.com:oskarincon/operation-quasar-go.git
@@ -142,3 +145,4 @@ RESPUESTA 404:
 - La api es realizada por medio del framework fiber Express para golang, se genera el microservicio
 - Se guarda el cache en memoria con ReneKroon/ttlcache/v2 
 - se realiza la implementación del api por medio de AWS
+- En la carpeta collectionsPostman se encuentra una colección que se puede importar en postman para el consumo de los servicios desplegados por docker o aws
