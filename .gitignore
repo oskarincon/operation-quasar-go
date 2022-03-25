@@ -1,3 +1,12 @@
 #vs
 .vscode
 .history
+
+#node
+.app/node_modules
+.app/dist
+
+#go
+.app/main
+
+.DS_Store
