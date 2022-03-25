@@ -3,10 +3,10 @@
 .history
 
 #node
-.app/node_modules
-.app/dist
+*/node_modules
+*/dist
 
 #go
-.app/main
+*/main
 
 .DS_Store
