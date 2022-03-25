@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 	fiberadaptor "github.com/awslabs/aws-lambda-go-api-proxy/fiber"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/oskarincon/operation-quasar-go/constants"
 	"github.com/oskarincon/operation-quasar-go/handlers"
 )
@@ -15,11 +16,16 @@ var adapter *fiberadaptor.FiberLambda
 
 func init() {
 	app := fiber.New()
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowHeaders: "*",
+		AllowMethods: "OPTIONS,POST,GET",
+	}))
 	router := app.Group(constants.Apipath)
 	// Create Routes
 	handlers.SetupRoutes(router)
 	// Server Init
-	handlers.Init(app)
+	//handlers.Init(app)
 	adapter = fiberadaptor.New(app)
 }
 

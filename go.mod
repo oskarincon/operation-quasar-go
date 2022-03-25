@@ -3,7 +3,7 @@ module github.com/oskarincon/operation-quasar-go
 go 1.17
 
 require (
-	github.com/aws/aws-lambda-go v1.19.1
+	github.com/aws/aws-lambda-go v1.28.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.13.1
 	github.com/gofiber/fiber/v2 v2.29.0
 	github.com/patrickmn/go-cache v2.1.0+incompatible
