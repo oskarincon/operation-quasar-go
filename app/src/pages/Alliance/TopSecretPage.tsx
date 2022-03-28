@@ -12,7 +12,7 @@ export const TopSecretPage = () => {
       </div>
     </LayoutContainer>
     <div style={{ fontSize: '2rem' }}>
-      <TopSecret data={[{index: 0, name: "kenobi", text: "", cord: ""}, {index: 1, name: "skywalker", text: "", cord: ""}, {index: 2, name: "sato", text: "", cord: ""}]}></TopSecret>
+      <TopSecret data={[{index: 0, name: "kenobi"}, {index: 1, name: "skywalker"}, {index: 2, name: "sato"}]}></TopSecret>
     </div>
   </>
   );
