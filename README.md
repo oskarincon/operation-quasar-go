@@ -20,15 +20,12 @@ Se tienen dos rutas del proyectos:
 - En la carpeta api se encuentra el back
 - En la carpeta app se encuentra la parte front (propuesta)
 
-## Ejecucion de proyecto Back🚚
-Ejecutar en con docker-compose:
+## Ejecucion de proyecto 🚚
+Ejecutar en con docker-compose para ejecutar completo la parte back y front:
 > $ docker-compose -f ./docker-compose.yml up --build
-Ejecutar en local con go:
-> $ go run .
 
 ## Endpoints
-    ENDPOINT AWS : https://w13tb32mml.execute-api.us-east-1.amazonaws.com/v1
-    ENDPOINT DOCKER : http://127.0.0.1:3000
+    ENDPOINT DOCKER : http://127.0.0.1:3333
 
 **topsecret**
 Obtenga la posición y el mensaje completo publicando tres satélites con la distancia y el mensaje completo.
@@ -144,13 +141,6 @@ RESPUESTA 404:
         "success": false
     }
 
-## Ejecucion de proyecto Front 💻 
-En la carpeta app, jecutar en con npm:
-> $ npm install
-Ejecutar en local con vite React:
-> $ npm run dev
-nota: tener encuenta que en el respositorio se esta apuntando a la url docker ya ejecutanda en la parte back
-
 **Desarrollo**
 - Por medio del metodo determinantes 3x2 se resuelve la ubicación de los satellites.
 - Por medio de validación de desfase de mensajes (igualar longitud de mensajes) y validacion de cada mensaje se resuelve el mensaje.
@@ -158,4 +148,3 @@ nota: tener encuenta que en el respositorio se esta apuntando a la url docker ya
 - Se guarda el cache en memoria con ReneKroon/ttlcache/v2 
 - se realiza la implementación del api por medio de AWS, por APi gAteway, lambda. La parte front por medio de AWS amplify
 - En la carpeta collectionsPostman se encuentra una colección que se puede importar en postman para el consumo de los servicios desplegados por docker o aws
-

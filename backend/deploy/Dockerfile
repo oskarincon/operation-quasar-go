@@ -1,7 +1,7 @@
 FROM golang:1.17
 
-WORKDIR /app
-COPY . /app
+WORKDIR /api
+COPY . /api
 
 RUN go build -o main ./main.go
 CMD ["./main"]

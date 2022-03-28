@@ -13,6 +13,6 @@ func Init(app *fiber.App) {
 		AllowCredentials: true,
 	}))
 
-	// Start server on port 3000
-	app.Listen(":3000")
+	// Start server on port 3333
+	app.Listen(":3333")
 }
