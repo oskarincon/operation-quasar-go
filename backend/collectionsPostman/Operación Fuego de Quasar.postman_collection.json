@@ -117,10 +117,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://w13tb32mml.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret",
+							"raw": "https://gmokkibw9g.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret",
 							"protocol": "https",
 							"host": [
-								"w13tb32mml",
+								"gmokkibw9g",
 								"execute-api",
 								"us-east-1",
 								"amazonaws",
@@ -150,10 +150,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://w13tb32mml.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret_split/sato1",
+							"raw": "https://gmokkibw9g.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret_split/skywalker",
 							"protocol": "https",
 							"host": [
-								"w13tb32mml",
+								"gmokkibw9g",
 								"execute-api",
 								"us-east-1",
 								"amazonaws",
@@ -163,7 +163,7 @@
 								"v1",
 								"alliance",
 								"topsecret_split",
-								"sato1"
+								"skywalker"
 							]
 						}
 					},
@@ -175,10 +175,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://w13tb32mml.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret_split",
+							"raw": "https://gmokkibw9g.execute-api.us-east-1.amazonaws.com/v1/alliance/topsecret_split",
 							"protocol": "https",
 							"host": [
-								"w13tb32mml",
+								"gmokkibw9g",
 								"execute-api",
 								"us-east-1",
 								"amazonaws",
